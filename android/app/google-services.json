@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "373488833572",
+    "firebase_url": "https://iot-alpr.firebaseio.com",
+    "project_id": "iot-alpr",
+    "storage_bucket": "iot-alpr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373488833572:android:947ebacf764a64b5",
+        "android_client_info": {
+          "package_name": "com.iotalpr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "373488833572-gjkb1imiq6rbv8eq3b780p5t2bi03l1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkpIOZ28ZUbjp_G-REYjvcNn43dsFz0tc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

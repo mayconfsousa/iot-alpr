@@ -1,0 +1,11 @@
+{
+  "presets": ["react-native"],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "@screens": "./compiled/screens",
+        "@utils": "./compiled/utils"
+      }
+    }]
+  ]
+}

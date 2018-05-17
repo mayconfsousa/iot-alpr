@@ -4,27 +4,27 @@ import firebase from 'react-native-firebase';
 import HomeScreen from '@screens/HomeScreen';
 
 export default class App extends React.Component<{}, {}> {
-  async componentDidMount() {
-    const fcmToken = await firebase.messaging().getToken();
-    if (fcmToken) {
-      console.log('SUCCESS', fcmToken);
-    } else {
-      console.log('ERROR', fcmToken);
-    }
+  messageListener;
 
-    const enabled = await firebase.messaging().hasPermission();
-    if (enabled) {
-      console.log('user has permissions');
-    } else {
-      console.log('user doesnt have permission');
-    }
+  async componentDidMount() {
+    this.messageListener = firebase.messaging().onMessage(message => {
+      // Process your message as required
+      console.log('message.data', message.data);
+    });
+
+    const token = await firebase.messaging().getToken();
+    if (token) console.log('Token', token);
+    else console.log('Error - Token');
 
     try {
       await firebase.messaging().requestPermission();
-      console.log('User has authorised');
     } catch (error) {
       console.log('User has rejected permissions');
     }
+  }
+
+  componentWillUnmount() {
+    this.messageListener();
   }
 
   render() {

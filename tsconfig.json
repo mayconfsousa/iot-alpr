@@ -14,9 +14,10 @@
     "noImplicitReturns": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "types": ["react", "react-native"],
+    "types": ["react", "react-native", "prop-types"],
     "baseUrl": "./src",
     "paths": {
+      "@components/*": ["components/*"],
       "@screens/*": ["screens/*"],
       "@utils/*": ["utils/*"]
     }

@@ -1,7 +1,7 @@
 import HomeScreen from '@screens/HomeScreen';
-import TestScreen from '@screens/TestScreen';
+import PlateRecognizerScreen from '@screens/PlateRecognizerScreen';
 
 export {
   HomeScreen,
-  TestScreen
+  PlateRecognizerScreen
 };

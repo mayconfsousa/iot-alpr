@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "*.js": "javascriptreact"
+    "*.js": "javascriptreact",
+    "*.ts": "typescriptreact"
   },
   "[javascriptreact]": {
     "editor.formatOnSave": true,

@@ -1,10 +1,20 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Header, Title, Left, Right, Button, Icon, Body, ActionSheet, Toast } from 'native-base';
+import {
+  View,
+  Header,
+  Title,
+  Left,
+  Right,
+  Button,
+  Icon,
+  Body,
+  ActionSheet,
+  Toast
+} from 'native-base';
 
 import Camera from '@components/Camera';
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1
   },
@@ -16,7 +26,7 @@ const styles = StyleSheet.create({
   actionIcon: {
     fontSize: 25
   }
-});
+};
 
 interface Props {}
 interface State {
@@ -75,7 +85,7 @@ export default class PlateRecognizer extends React.Component<Props, State> {
         title: 'Select a device'
       },
       buttonIndex => {
-        this.setState({ device: DEVICES[buttonIndex] });
+        if (buttonIndex > 0) this.setState({ device: DEVICES[buttonIndex] });
       }
     );
 

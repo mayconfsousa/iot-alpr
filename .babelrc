@@ -1,12 +1,3 @@
 {
-  "presets": ["react-native"],
-  "plugins": [
-    ["module-resolver", {
-      "alias": {
-        "@components": "./compiled/components",
-        "@screens": "./compiled/screens",
-        "@utils": "./compiled/utils"
-      }
-    }]
-  ]
+  "presets": ["react-native"]
 }

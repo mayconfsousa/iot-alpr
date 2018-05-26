@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import {
   View,
   Header,
@@ -9,84 +10,53 @@ import {
   Icon,
   Body,
   ActionSheet,
-  Toast
+  Toast,
 } from 'native-base';
 
-import Camera from '@components/Camera';
+import styles from './styles';
 
-const styles = {
-  container: {
-    flex: 1
-  },
-  camera: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  actionIcon: {
-    fontSize: 25
-  }
-};
-
-interface Props {}
-interface State {
-  camera: {
-    aspect: string;
-  };
-  plate: string;
-  device: string;
-}
+import Camera from '../../components/Camera';
 
 const CALIFORNIA_FORMATS = [
   /^\d{1}[A-Z]{3}\d{3}$/,
   /^\d{1}[A-Z]{1}\d{5}$/,
   /^\d{5}[A-Z]{1}\d{1}$/,
-  /^\d{3}[A-Z]{3}$/
+  /^\d{3}[A-Z]{3}$/,
 ];
 
 const DEVICES = ['Device 1', 'Device 2', 'Device 3'];
 
-export default class PlateRecognizer extends React.Component<Props, State> {
-  camera;
-
-  constructor(props: Props) {
-    super(props);
-
-    this.camera = null;
-    this.state = {
-      camera: {
-        aspect: Camera.constants.Aspect.fill
-      },
-      plate: null,
-      device: DEVICES[0]
-    };
-  }
-
-  plateIsValid = (plate: string, confidence: number): boolean => {
-    return confidence > 90 && CALIFORNIA_FORMATS.some(regex => regex.test(plate));
+export default class PlateRecognizer extends Component {
+  state = {
+    // plate: null,
+    device: DEVICES[0],
   };
 
   onPlateRecognized = ({ plate, confidence }) => {
-    var confidenceValue = parseFloat(confidence.replace(',', '.'));
+    const confidenceValue = parseFloat(confidence.replace(',', '.'));
     if (this.plateIsValid(plate, confidenceValue)) {
-      this.setState({ plate });
+      // this.setState({ plate });
+      console.tron.log(plate);
       Toast.show({
         text: `Plate: ${plate}`,
         buttonText: 'OK',
-        duration: 3000
+        duration: 3000,
       });
     }
   };
+
+  plateIsValid = (plate, confidence) =>
+    confidence > 85 && CALIFORNIA_FORMATS.some(regex => regex.test(plate));
 
   showActionSheet = () =>
     ActionSheet.show(
       {
         options: DEVICES,
-        title: 'Select a device'
+        title: 'Select a device',
       },
-      buttonIndex => {
+      (buttonIndex) => {
         if (buttonIndex > 0) this.setState({ device: DEVICES[buttonIndex] });
-      }
+      },
     );
 
   render() {
@@ -104,11 +74,8 @@ export default class PlateRecognizer extends React.Component<Props, State> {
           </Right>
         </Header>
         <Camera
-          ref={cam => {
-            this.camera = cam;
-          }}
           style={styles.camera}
-          aspect={this.state.camera.aspect}
+          aspect={Camera.constants.Aspect.fill}
           captureQuality={Camera.constants.CaptureQuality.high}
           country="us"
           onPlateRecognized={this.onPlateRecognized}

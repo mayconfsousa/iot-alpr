@@ -1,12 +1,8 @@
 {
   "files.associations": {
-    "*.js": "javascriptreact",
-    "*.ts": "typescriptreact"
+    "*.js": "javascriptreact"
   },
   "[javascriptreact]": {
-    "editor.formatOnSave": true,
-  },
-  "[typescriptreact]": {
     "editor.formatOnSave": true,
   },
   "files.eol": "\n",
@@ -14,5 +10,6 @@
   "javascript.validate.enable": false,
   "prettier.printWidth": 100,
   "prettier.singleQuote": true,
-  "prettier.tabWidth": 2
+  "prettier.tabWidth": 2,
+  "prettier.eslintIntegration": true
 }

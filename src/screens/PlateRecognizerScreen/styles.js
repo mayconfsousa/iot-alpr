@@ -1,16 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { general } from '../../styles';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+  ...general,
   camera: {
     flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  actionIcon: {
-    fontSize: 25,
   },
 });
 

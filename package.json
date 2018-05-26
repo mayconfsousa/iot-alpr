@@ -10,6 +10,7 @@
     "android:clean": "cd android && ./gradlew clean"
   },
   "dependencies": {
+    "apisauce": "^0.15.1",
     "lodash": "^4.17.10",
     "moment": "^2.22.1",
     "native-base": "^2.4.5",

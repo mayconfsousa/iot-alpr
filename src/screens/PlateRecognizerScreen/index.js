@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, ActionSheet, Toast } from 'native-base';
 
 import styles from './styles';
+import api from '../../api';
 import Header from '../../components/Header';
 import Camera from '../../components/Camera';
 
@@ -13,27 +14,30 @@ const CALIFORNIA_FORMATS = [
   /^\d{3}[A-Z]{3}$/,
 ];
 
-const DEVICES = [
-  'Device 001',
-  'Device 002',
-  'Device 003',
-  'Device 004',
-  'Device 005',
-  'Device 006',
-];
-
 export default class PlateRecognizer extends Component {
   state = {
     // plate: null,
-    device: DEVICES[0],
+    devices: [],
+    selectedDevice: null,
   };
+
+  async componentWillMount() {
+    const response = await api.get('/devices');
+    if (response.ok) {
+      const devices = response.data.map(device => device.name);
+      this.setState({
+        devices,
+        selectedDevice: devices[0],
+      });
+    }
+  }
 
   onPlateRecognized = ({ plate, confidence }) => {
     const confidenceValue = parseFloat(confidence.replace(',', '.'));
     if (this.plateIsValid(plate, confidenceValue)) {
       // this.setState({ plate });
       Toast.show({
-        text: `Device: ${this.state.device} # Plate: ${plate}`,
+        text: `Plate: ${plate}`,
         buttonText: 'OK',
         duration: 3000,
       });
@@ -46,11 +50,11 @@ export default class PlateRecognizer extends Component {
   showActionSheet = () =>
     ActionSheet.show(
       {
-        options: DEVICES,
+        options: this.state.devices,
         title: 'Select a device',
       },
       (buttonIndex) => {
-        if (buttonIndex >= 0) this.setState({ device: DEVICES[buttonIndex] });
+        if (buttonIndex >= 0) this.setState({ selectedDevice: this.state.devices[buttonIndex] });
       },
     );
 
@@ -58,7 +62,7 @@ export default class PlateRecognizer extends Component {
     return (
       <View style={styles.container}>
         <Header
-          title={this.state.device}
+          title={this.state.selectedDevice || 'Loading...'}
           leftIcon="react"
           rightIcon="camera-party-mode"
           onPressRight={this.showActionSheet}

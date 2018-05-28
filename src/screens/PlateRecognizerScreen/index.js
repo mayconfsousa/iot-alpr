@@ -20,7 +20,7 @@ const CALIFORNIA_FORMATS = [
 ];
 
 class PlateRecognizerScreen extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.deviceListRequest();
   }
 
@@ -52,11 +52,12 @@ class PlateRecognizerScreen extends Component {
   render() {
     const { selectedDevice } = this.props;
     const deviceName = selectedDevice ? selectedDevice.name : 'No device';
+    const title = this.props.loading ? 'Loading...' : deviceName;
 
     return (
       <View style={styles.container}>
         <Header
-          title={this.props.loading ? 'Loading...' : deviceName}
+          title={title}
           leftIcon="react"
           rightIcon="camera-party-mode"
           onPressRight={this.showActionSheet}

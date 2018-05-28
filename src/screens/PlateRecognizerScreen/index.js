@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import { View, ActionSheet, Toast } from 'native-base';
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { Creators as DeviceCreators } from '../../redux/devices';
+
 import styles from './styles';
-import api from '../../api';
 import Header from '../../components/Header';
 import Camera from '../../components/Camera';
+
+const { deviceListRequest, changeDeviceSelection } = DeviceCreators;
 
 const CALIFORNIA_FORMATS = [
   /^\d{1}[A-Z]{3}\d{3}$/,
@@ -14,28 +21,14 @@ const CALIFORNIA_FORMATS = [
   /^\d{3}[A-Z]{3}$/,
 ];
 
-export default class PlateRecognizer extends Component {
-  state = {
-    // plate: null,
-    devices: [],
-    selectedDevice: null,
-  };
-
-  async componentWillMount() {
-    const response = await api.get('/devices');
-    if (response.ok) {
-      const devices = response.data.map(device => device.name);
-      this.setState({
-        devices,
-        selectedDevice: devices[0],
-      });
-    }
+class PlateRecognizerScreen extends Component {
+  componentDidMount() {
+    this.props.deviceListRequest();
   }
 
   onPlateRecognized = ({ plate, confidence }) => {
     const confidenceValue = parseFloat(confidence.replace(',', '.'));
     if (this.plateIsValid(plate, confidenceValue)) {
-      // this.setState({ plate });
       Toast.show({
         text: `Plate: ${plate}`,
         buttonText: 'OK',
@@ -50,19 +43,20 @@ export default class PlateRecognizer extends Component {
   showActionSheet = () =>
     ActionSheet.show(
       {
-        options: this.state.devices,
+        options: this.props.devices.map(device => device.name),
         title: 'Select a device',
       },
-      (buttonIndex) => {
-        if (buttonIndex >= 0) this.setState({ selectedDevice: this.state.devices[buttonIndex] });
-      },
+      buttonIndex => this.props.changeDeviceSelection(buttonIndex),
     );
 
   render() {
+    const { selectedDevice } = this.props;
+    const deviceName = selectedDevice ? selectedDevice.name : 'No device';
+
     return (
       <View style={styles.container}>
         <Header
-          title={this.state.selectedDevice || 'Loading...'}
+          title={this.props.loading ? 'Loading...' : deviceName}
           leftIcon="react"
           rightIcon="camera-party-mode"
           onPressRight={this.showActionSheet}
@@ -82,3 +76,21 @@ export default class PlateRecognizer extends Component {
     );
   }
 }
+
+PlateRecognizerScreen.defaultProps = {
+  selectedDevice: {},
+};
+
+PlateRecognizerScreen.propTypes = {
+  devices: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  selectedDevice: PropTypes.object,
+  deviceListRequest: PropTypes.func.isRequired,
+  changeDeviceSelection: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = ({ deviceReducer }) => ({ ...deviceReducer });
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ deviceListRequest, changeDeviceSelection }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlateRecognizerScreen);

@@ -1,16 +1,17 @@
 import Reactotron from 'reactotron-react-native';
+import { reactotronRedux } from 'reactotron-redux';
+import sagaPlugin from 'reactotron-redux-saga';
 
-// eslint-disable-next-line no-undef
+// eslint-disable-next-line
 if (__DEV__) {
-  // eslint-disable-next-line no-console
-  console.tron = Reactotron.configure({ host: '192.168.100.105' })
+  const tron = Reactotron.configure({ host: '192.168.1.192' })
     .useReactNative()
+    .use(reactotronRedux())
+    .use(sagaPlugin())
     .connect();
-} else {
-  // eslint-disable-next-line no-console
-  console.tron = {
-    log: () => {},
-    error: () => {},
-    display: () => {},
-  };
+
+  tron.clear();
+
+  // eslint-disable-next-line
+  console.tron = tron;
 }

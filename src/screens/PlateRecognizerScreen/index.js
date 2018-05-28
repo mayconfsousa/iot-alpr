@@ -12,8 +12,6 @@ import styles from './styles';
 import Header from '../../components/Header';
 import Camera from '../../components/Camera';
 
-const { deviceListRequest, changeDeviceSelection } = DeviceCreators;
-
 const CALIFORNIA_FORMATS = [
   /^\d{1}[A-Z]{3}\d{3}$/,
   /^\d{1}[A-Z]{1}\d{5}$/,
@@ -92,7 +90,6 @@ PlateRecognizerScreen.propTypes = {
 };
 
 const mapStateToProps = ({ deviceReducer }) => ({ ...deviceReducer });
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ deviceListRequest, changeDeviceSelection }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(DeviceCreators, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlateRecognizerScreen);

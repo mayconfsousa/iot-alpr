@@ -46,7 +46,9 @@ class PlateRecognizerScreen extends Component {
         options: this.props.devices.map(device => device.name),
         title: 'Select a device',
       },
-      buttonIndex => this.props.changeDeviceSelection(buttonIndex),
+      (buttonIndex) => {
+        if (buttonIndex >= 0) this.props.changeDeviceSelection(buttonIndex);
+      },
     );
 
   render() {
@@ -78,7 +80,7 @@ class PlateRecognizerScreen extends Component {
 }
 
 PlateRecognizerScreen.defaultProps = {
-  selectedDevice: {},
+  selectedDevice: null,
 };
 
 PlateRecognizerScreen.propTypes = {

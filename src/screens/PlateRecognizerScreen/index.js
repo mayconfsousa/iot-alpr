@@ -18,7 +18,7 @@ const CALIFORNIA_FORMATS = [
 
 class PlateRecognizerScreen extends Component {
   componentWillMount() {
-    this.props.getAll();
+    this.props.getAllDevices();
   }
 
   onPlateRecognized = ({ plate, confidence }) => {
@@ -35,21 +35,27 @@ class PlateRecognizerScreen extends Component {
   plateIsValid = (plate, confidence) =>
     confidence > 85 && CALIFORNIA_FORMATS.some(regex => regex.test(plate));
 
-  showActionSheet = () =>
+  showActionSheet = () => {
+    const {
+      deviceState: { devices },
+      changeDeviceSelection,
+    } = this.props;
+
     ActionSheet.show(
       {
-        options: this.props.devices.map(device => device.name),
+        options: devices.map(device => device.name),
         title: 'Select a device',
       },
       (buttonIndex) => {
-        if (buttonIndex >= 0) this.props.changeSelection(buttonIndex);
+        if (buttonIndex >= 0) changeDeviceSelection(buttonIndex);
       },
     );
+  };
 
   render() {
-    const { selectedDevice } = this.props;
+    const { selectedDevice, loading } = this.props.deviceState;
     const deviceName = selectedDevice ? selectedDevice.name : 'No device';
-    const title = this.props.loading ? 'Loading...' : deviceName;
+    const title = loading ? 'Loading...' : deviceName;
 
     return (
       <View style={styles.container}>
@@ -75,19 +81,16 @@ class PlateRecognizerScreen extends Component {
   }
 }
 
-PlateRecognizerScreen.defaultProps = {
-  selectedDevice: null,
-};
-
 PlateRecognizerScreen.propTypes = {
-  devices: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
-  selectedDevice: PropTypes.object,
-  getAll: PropTypes.func.isRequired,
-  changeSelection: PropTypes.func.isRequired,
+  deviceState: PropTypes.object.isRequired,
+  getAllDevices: PropTypes.func.isRequired,
+  changeDeviceSelection: PropTypes.func.isRequired,
 };
 
-const mapState = state => ({ ...state.devices });
-const mapDispatch = ({ devices }) => ({ ...devices });
+const mapState = state => ({ deviceState: state.devices });
+const mapDispatch = ({ devices }) => ({
+  getAllDevices: devices.getAll,
+  changeDeviceSelection: devices.changeSelection,
+});
 
 export default connect(mapState, mapDispatch)(PlateRecognizerScreen);

@@ -11,8 +11,8 @@ const devices = {
     request(state) {
       return { ...state, loading: true };
     },
-    success(state, deviceList) {
-      return { ...state, loading: false, devices: deviceList };
+    success(state, devices) {
+      return { ...state, loading: false, devices };
     },
     failure(state, error) {
       return { ...state, loading: false, error };

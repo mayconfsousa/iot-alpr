@@ -3,10 +3,7 @@ import { PropTypes } from 'prop-types';
 
 import { View, ActionSheet, Toast } from 'native-base';
 
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
-import { Creators as DeviceCreators } from '../../redux/devices';
 
 import styles from './styles';
 import Header from '../../components/Header';
@@ -21,7 +18,7 @@ const CALIFORNIA_FORMATS = [
 
 class PlateRecognizerScreen extends Component {
   componentWillMount() {
-    this.props.deviceListRequest();
+    this.props.getAll();
   }
 
   onPlateRecognized = ({ plate, confidence }) => {
@@ -45,7 +42,7 @@ class PlateRecognizerScreen extends Component {
         title: 'Select a device',
       },
       (buttonIndex) => {
-        if (buttonIndex >= 0) this.props.changeDeviceSelection(buttonIndex);
+        if (buttonIndex >= 0) this.props.changeSelection(buttonIndex);
       },
     );
 
@@ -86,11 +83,11 @@ PlateRecognizerScreen.propTypes = {
   devices: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
   selectedDevice: PropTypes.object,
-  deviceListRequest: PropTypes.func.isRequired,
-  changeDeviceSelection: PropTypes.func.isRequired,
+  getAll: PropTypes.func.isRequired,
+  changeSelection: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ deviceReducer }) => ({ ...deviceReducer });
-const mapDispatchToProps = dispatch => bindActionCreators(DeviceCreators, dispatch);
+const mapState = state => ({ ...state.devices });
+const mapDispatch = ({ devices }) => ({ ...devices });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlateRecognizerScreen);
+export default connect(mapState, mapDispatch)(PlateRecognizerScreen);

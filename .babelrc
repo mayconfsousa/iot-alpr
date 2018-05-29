@@ -1,3 +1,18 @@
 {
-  "presets": ["react-native"]
+  "presets": ["react-native"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@api": "./src/api",
+          "@components": "./src/components",
+          "@config": "./src/config",
+          "@screens": "./src/screens",
+          "@store": "./src/store",
+          "@styles": "./src/styles"
+        }
+      }
+    ]
+  ]
 }

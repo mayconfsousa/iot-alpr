@@ -15,8 +15,14 @@
   "rules": {
     "no-console": ["error", {"allow": ["tron"]}],
     "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
     "no-shadow": 0,
     "react/jsx-filename-extension": 0,
     "react/forbid-prop-types": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }

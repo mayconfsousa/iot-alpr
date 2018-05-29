@@ -3,11 +3,11 @@ import React from 'react';
 import { Root } from 'native-base';
 import { Provider } from 'react-redux';
 
-import './config/ReactotronConfig';
+import '@config/ReactotronConfig';
 
-import store from './store';
+import store from '@store';
 
-import PlateRecognizerScreen from './screens/PlateRecognizerScreen';
+import { PlateRecognizerScreen } from '@screens';
 
 export default () => (
   <Root>

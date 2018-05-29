@@ -4,8 +4,8 @@ import { View, Text, TouchableOpacity, StatusBar } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import { colors, fonts } from '@styles';
 import styles from './styles';
-import { colors, fonts } from '../../styles';
 
 const Header = ({
   title, leftIcon, rightIcon, onPressLeft, onPressRight,

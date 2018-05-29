@@ -5,9 +5,8 @@ import { View, ActionSheet, Toast } from 'native-base';
 
 import { connect } from 'react-redux';
 
+import { Header, Camera } from '@components';
 import styles from './styles';
-import Header from '../../components/Header';
-import Camera from '../../components/Camera';
 
 const CALIFORNIA_FORMATS = [
   /^\d{1}[A-Z]{3}\d{3}$/,

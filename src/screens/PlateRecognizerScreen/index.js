@@ -88,7 +88,7 @@ class PlateRecognizerScreen extends Component {
     return !activities.some(a =>
       a.uuid_dispositivo === activity.uuid_dispositivo &&
         a.placa === activity.placa &&
-        moment.duration(moment(activity.timestamp).diff(moment(a.timestamp))).asSeconds() <= 10);
+        moment.duration(moment(activity.timestamp).diff(moment(a.timestamp))).asSeconds() <= 30);
   };
 
   render() {

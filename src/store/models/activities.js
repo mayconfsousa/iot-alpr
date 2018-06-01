@@ -6,17 +6,21 @@ const activities = {
     error: null,
   },
   reducers: {
-    success(state) {
-      return { ...state, loading: false };
+    request(state) {
+      return { ...state, loading: true };
+    },
+    success(state, activity) {
+      return { ...state, loading: false, activities: [...state.activities, activity] };
     },
     failure(state, error) {
       return { ...state, loading: false, error };
     },
   },
   effects: {
-    async saveActivity(data) {
-      const response = await saveActivity(data);
-      if (response.ok) this.success();
+    async saveActivity(activity) {
+      this.request();
+      const response = await saveActivity(activity);
+      if (response.ok) this.success(response.data);
       else this.failure(response.error);
     },
   },

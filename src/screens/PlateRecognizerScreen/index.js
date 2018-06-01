@@ -21,23 +21,45 @@ class PlateRecognizerScreen extends Component {
     this.props.getAllDevices();
   }
 
-  onPlateRecognized = ({ plate, confidence }) => {
-    const confidenceValue = parseFloat(confidence.replace(',', '.'));
-    if (this.plateIsValid(plate, confidenceValue)) {
-      const activity = {
-        uuid_dispositivo: this.props.deviceState.selectedDevice.uuid_dispositivo,
-        placa: plate,
-        timestamp: moment().toJSON(),
-      };
+  componentDidUpdate() {
+    const { deviceState, activityState } = this.props;
 
-      this.props.saveActivity(activity);
-
+    if (deviceState.error || activityState.error) {
       Toast.show({
-        text: `Plate: ${plate}`,
+        text: `ERROR: ${deviceState.error || activityState.error}`,
         buttonText: 'OK',
         duration: 3000,
       });
     }
+  }
+
+  onPlateRecognized = ({ plate, confidence }) => {
+    const confidenceValue = parseFloat(confidence.replace(',', '.'));
+    if (this.plateIsValid(plate, confidenceValue)) {
+      const { selectedDevice } = this.props.deviceState;
+
+      const activity = {
+        uuid_dispositivo: selectedDevice.uuid_dispositivo,
+        placa: plate,
+        timestamp: moment().toJSON(),
+      };
+
+      if (this.enableSendActivity(activity)) {
+        this.props.saveActivity(activity);
+
+        Toast.show({
+          text: `Plate: ${plate}`,
+          buttonText: 'OK',
+          duration: 3000,
+        });
+      }
+    }
+  };
+
+  getTitle = () => {
+    const { selectedDevice, loading } = this.props.deviceState;
+    const deviceName = selectedDevice ? selectedDevice.name : 'No device';
+    return loading ? 'Loading...' : deviceName;
   };
 
   plateIsValid = (plate, confidence) =>
@@ -60,15 +82,20 @@ class PlateRecognizerScreen extends Component {
     );
   };
 
-  render() {
-    const { selectedDevice, loading } = this.props.deviceState;
-    const deviceName = selectedDevice ? selectedDevice.name : 'No device';
-    const title = loading ? 'Loading...' : deviceName;
+  enableSendActivity = (activity) => {
+    const { activities } = this.props.activityState;
 
+    return !activities.some(a =>
+      a.uuid_dispositivo === activity.uuid_dispositivo &&
+        a.placa === activity.placa &&
+        moment.duration(moment(activity.timestamp).diff(moment(a.timestamp))).asSeconds() <= 10);
+  };
+
+  render() {
     return (
       <View style={styles.container}>
         <Header
-          title={title}
+          title={this.getTitle()}
           leftIcon="react"
           rightIcon="camera-party-mode"
           onPressRight={this.showActionSheet}
@@ -91,12 +118,14 @@ class PlateRecognizerScreen extends Component {
 
 PlateRecognizerScreen.propTypes = {
   deviceState: PropTypes.object.isRequired,
+  activityState: PropTypes.object.isRequired,
   getAllDevices: PropTypes.func.isRequired,
   changeDeviceSelection: PropTypes.func.isRequired,
   saveActivity: PropTypes.func.isRequired,
 };
 
-const mapState = state => ({ deviceState: state.devices });
+const mapState = state => ({ deviceState: state.devices, activityState: state.activities });
+
 const mapDispatch = ({ devices, activities }) => ({
   getAllDevices: devices.getAll,
   changeDeviceSelection: devices.changeSelection,

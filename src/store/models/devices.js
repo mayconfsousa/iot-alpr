@@ -1,4 +1,4 @@
-import api from '@api';
+import { getDevices } from '@api';
 
 const devices = {
   state: {
@@ -27,7 +27,7 @@ const devices = {
   effects: {
     async getAll() {
       this.request();
-      const response = await api.get('/devices');
+      const response = await getDevices();
       if (response.ok) {
         this.success(response.data);
         if (response.data && response.data.length > 0) this.changeSelection(0);

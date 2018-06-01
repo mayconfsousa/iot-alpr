@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
 import { View, ActionSheet, Toast } from 'native-base';
+import moment from 'moment';
 
 import { connect } from 'react-redux';
 
@@ -23,6 +24,14 @@ class PlateRecognizerScreen extends Component {
   onPlateRecognized = ({ plate, confidence }) => {
     const confidenceValue = parseFloat(confidence.replace(',', '.'));
     if (this.plateIsValid(plate, confidenceValue)) {
+      const activity = {
+        uuid_dispositivo: this.props.deviceState.selectedDevice.uuid_dispositivo,
+        placa: plate,
+        timestamp: moment().toJSON(),
+      };
+
+      this.props.saveActivity(activity);
+
       Toast.show({
         text: `Plate: ${plate}`,
         buttonText: 'OK',
@@ -84,12 +93,14 @@ PlateRecognizerScreen.propTypes = {
   deviceState: PropTypes.object.isRequired,
   getAllDevices: PropTypes.func.isRequired,
   changeDeviceSelection: PropTypes.func.isRequired,
+  saveActivity: PropTypes.func.isRequired,
 };
 
 const mapState = state => ({ deviceState: state.devices });
-const mapDispatch = ({ devices }) => ({
+const mapDispatch = ({ devices, activities }) => ({
   getAllDevices: devices.getAll,
   changeDeviceSelection: devices.changeSelection,
+  saveActivity: activities.saveActivity,
 });
 
 export default connect(mapState, mapDispatch)(PlateRecognizerScreen);

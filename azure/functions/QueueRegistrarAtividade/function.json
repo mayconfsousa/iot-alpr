@@ -1,0 +1,13 @@
+{
+    "bindings": [
+      {
+        "name": "mySbMsg",
+        "type": "serviceBusTrigger",
+        "direction": "in",
+        "queueName": "registrar_atividade",
+        "connection": "puc-asd-iot_ListenAccess_SERVICEBUS",
+        "accessRights": "Listen"
+      }
+    ],
+    "disabled": false
+  }

@@ -1,0 +1,29 @@
+{
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "get",
+          "post"
+        ],
+        "route": "atividades/{dispositivoId:guid?}/{atividadeId:guid?}"
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "res"
+      },
+      {
+        "type": "serviceBus",
+        "connection": "puc-asd-iot_SenderAccess_SERVICEBUS",
+        "name": "outputSbMsg",
+        "queueName": "registrar_atividade",
+        "accessRights": "Send",
+        "direction": "out"
+      }
+    ],
+    "disabled": false
+  }

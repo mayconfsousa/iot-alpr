@@ -1,0 +1,18 @@
+FOR d IN Dispositivos
+    SORT d.timestamp
+    LET ativ = (
+        FOR a IN Atividades
+            FILTER a.uuid_dispositivo == d.uuid_dispositivo
+            SORT a.timestamp
+            RETURN { 
+                uuid_atividade: a.uuid_atividade, 
+                placa: a.placa, 
+                timestamp: a.timestamp 
+            }
+    )
+    RETURN { 
+        uuid_dispositivo: d.uuid_dispositivo, 
+        name: d.name, 
+        timestamp: d.timestamp, 
+        atividades: ativ 
+    }

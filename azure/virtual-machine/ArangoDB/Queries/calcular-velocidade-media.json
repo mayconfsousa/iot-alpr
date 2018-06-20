@@ -1,0 +1,82 @@
+[
+    {
+      "placa": "6MBV006",
+      "tempo_percurso": 2588,
+      "velocidade_media": 67.88253477588871,
+      "percentual_velocidade_media": "13.137557959814528%",
+      "distancia_trecho": 48.8,
+      "velocidade_media_trecho": 60,
+      "origem": {
+        "name": "Belo Horizonte",
+        "uuid_dispositivo": "5a3b803f-2e9e-490d-a3cb-80024ef5cf97",
+        "uuid_atividade": "a182fedf-653d-4272-a767-6e15970d6c92",
+        "timestamp": "2018-06-18T16:40:24.384Z"
+      },
+      "destino": {
+        "name": "Roças Novas (Caeté)",
+        "uuid_dispositivo": "dd0c251b-59a5-43f7-bd2b-68e4c93e6f82",
+        "uuid_atividade": "6b0ceaad-f833-4254-a976-ac54417f9f3c",
+        "timestamp": "2018-06-18T17:23:32.954Z"
+      }
+    },
+    {
+      "placa": "6MBV006",
+      "tempo_percurso": 4029,
+      "velocidade_media": 62.01042442293374,
+      "percentual_velocidade_media": "3.3507073715562274%",
+      "distancia_trecho": 69.4,
+      "velocidade_media_trecho": 60,
+      "origem": {
+        "name": "Roças Novas (Caeté)",
+        "uuid_dispositivo": "dd0c251b-59a5-43f7-bd2b-68e4c93e6f82",
+        "uuid_atividade": "6b0ceaad-f833-4254-a976-ac54417f9f3c",
+        "timestamp": "2018-06-18T17:23:32.954Z"
+      },
+      "destino": {
+        "name": "João Monlevade",
+        "uuid_dispositivo": "eb1c568a-6e94-45d5-841f-42234e11cf50",
+        "uuid_atividade": "9ef61d6d-2740-4e57-8d1b-62e060078501",
+        "timestamp": "2018-06-18T18:30:41.976Z"
+      }
+    },
+    {
+      "placa": "6MBV006",
+      "tempo_percurso": 1386,
+      "velocidade_media": 71.42857142857143,
+      "percentual_velocidade_media": "2.0408163265306145%",
+      "distancia_trecho": 27.5,
+      "velocidade_media_trecho": 70,
+      "origem": {
+        "name": "João Monlevade",
+        "uuid_dispositivo": "eb1c568a-6e94-45d5-841f-42234e11cf50",
+        "uuid_atividade": "9ef61d6d-2740-4e57-8d1b-62e060078501",
+        "timestamp": "2018-06-18T18:30:41.976Z"
+      },
+      "destino": {
+        "name": "Nova Era",
+        "uuid_dispositivo": "c41b096d-125f-40de-a634-a5ae58d7cf9b",
+        "uuid_atividade": "a75b4886-b5b1-413d-bf1e-f367d1ceb750",
+        "timestamp": "2018-06-18T18:53:48.076Z"
+      }
+    },
+    {
+      "placa": "6MBV006",
+      "tempo_percurso": 1048,
+      "velocidade_media": 92.06106870229009,
+      "percentual_velocidade_media": "31.51581243184298%",
+      "distancia_trecho": 26.8,
+      "velocidade_media_trecho": 70,
+      "origem": {
+        "name": "Nova Era",
+        "uuid_dispositivo": "c41b096d-125f-40de-a634-a5ae58d7cf9b",
+        "uuid_atividade": "a75b4886-b5b1-413d-bf1e-f367d1ceb750",
+        "timestamp": "2018-06-18T18:53:48.076Z"
+      },
+      "destino": {
+        "name": "Antônio Dias",
+        "uuid_dispositivo": "716ea40f-5a81-467f-bd57-23786568718b",
+        "uuid_atividade": "407cf410-3916-4577-9e27-25bdcf4899ca",
+        "timestamp": "2018-06-18T19:11:16.767Z"
+      }
+    }
+  ]

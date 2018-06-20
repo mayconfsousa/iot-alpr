@@ -1,0 +1,70 @@
+for ativ in Atividades
+    // Ordena atividades pela Data
+    sort ativ.timestamp
+    // Busca dispositivo da Atividade
+    let disp = (
+        for d in Dispositivos
+            filter d.uuid_dispositivo == ativ.uuid_dispositivo
+            limit 1
+            return d
+    )[0]
+    filter disp != null
+    // Busca atividade anterior
+    let ativAnt = (
+        for a in Atividades
+           sort a.timestamp desc
+           filter a.placa == ativ.placa
+           filter a.timestamp < ativ.timestamp
+           limit 1
+           return a
+    )[0]
+    filter ativAnt != null
+    // Busca dispositivo da atividade anterior
+    let dispAnt = (
+        for d in Dispositivos
+            filter d.uuid_dispositivo == ativAnt.uuid_dispositivo
+            limit 1
+            return d
+    )[0]
+    filter dispAnt != null
+    // Verifica se existe Edge para sequência de dispositivos
+    let edge = (
+        for e in DistanciaDispositivo
+            filter e._from == dispAnt._id
+            filter e._to == disp._id
+            limit 1
+            return e
+    )[0]
+    filter edge != null
+    // Tempo do trajeto (em segundos)
+    let dif = DATE_DIFF(DATE_TIMESTAMP(ativAnt.timestamp), DATE_TIMESTAMP(ativ.timestamp), "s")
+    // Velocidade média
+    let spe = (
+        filter dif != 0
+        return edge.distance / ( dif / 3600 )
+    )[0]
+    // Percentual da velocidade média
+    let vel = ( spe / edge.speed - 1 ) * 100
+    let vel_perc = CONCAT( vel, "%")
+    
+    // Retorna JSON
+    return {
+        placa: ativ.placa,
+        tempo_percurso: dif,
+        velocidade_media: spe,
+        percentual_velocidade_media: vel_perc,
+        distancia_trecho: edge.distance,
+        velocidade_media_trecho: edge.speed,
+        origem: {
+            name: dispAnt.name,
+            uuid_dispositivo: ativAnt.uuid_dispositivo,
+            uuid_atividade: ativAnt.uuid_atividade,
+            timestamp: ativAnt.timestamp
+        },
+        destino: {
+            name: disp.name,
+            uuid_dispositivo: ativ.uuid_dispositivo,
+            uuid_atividade: ativ.uuid_atividade,
+            timestamp: ativ.timestamp
+        }
+    }

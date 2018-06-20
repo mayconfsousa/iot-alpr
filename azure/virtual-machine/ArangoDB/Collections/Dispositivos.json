@@ -1,0 +1,184 @@
+[
+  {
+    "_key": "2793616",
+    "_id": "Dispositivos/2793616",
+    "_rev": "_X_3ploi--_",
+    "azure_id": "2d284095-d69f-45a0-868f-dc98c8e15475",
+    "name": "Belo Horizonte",
+    "coordinate": [
+      -19.9167,
+      -43.9333
+    ],
+    "uuid_dispositivo": "5a3b803f-2e9e-490d-a3cb-80024ef5cf97",
+    "timestamp": "2018-06-13T17:14:34.071Z"
+  },
+  {
+    "_key": "2793783",
+    "_id": "Dispositivos/2793783",
+    "_rev": "_W9mj_ny--_",
+    "azure_id": "c665f56b-5193-416f-9a2e-562a551d058b",
+    "name": "Ouro Preto",
+    "coordinate": [
+      -20.3856,
+      -43.5035
+    ],
+    "uuid_dispositivo": "3e8f7428-7022-4aa0-8422-99cabc5eaa2b",
+    "timestamp": "2018-06-13T17:15:20.503Z"
+  },
+  {
+    "_key": "2793805",
+    "_id": "Dispositivos/2793805",
+    "_rev": "_W9mjDZm--_",
+    "azure_id": "d1a58fbb-7afd-402e-a484-9f3b263538c1",
+    "name": "Ponte Nova",
+    "coordinate": [
+      -20.4117,
+      -42.897
+    ],
+    "uuid_dispositivo": "abcedc61-4197-4d84-91cf-f981bda7b250",
+    "timestamp": "2018-06-13T17:15:24.398Z"
+  },
+  {
+    "_key": "2793654",
+    "_id": "Dispositivos/2793654",
+    "_rev": "_W9micqm--_",
+    "azure_id": "039be906-b68a-45f1-8d2b-311f5f2a92eb",
+    "name": "Itabira",
+    "coordinate": [
+      -19.6657,
+      -43.2121
+    ],
+    "uuid_dispositivo": "9a780f1f-182a-47ef-91fc-3fc3de5284fc",
+    "timestamp": "2018-06-13T17:14:44.478Z"
+  },
+  {
+    "_key": "2793688",
+    "_id": "Dispositivos/2793688",
+    "_rev": "_X_3p3W6--_",
+    "azure_id": "94ba254b-7961-4895-9fd4-176c273208e4",
+    "name": "Nova Era",
+    "coordinate": [
+      -19.7531,
+      -43.027
+    ],
+    "uuid_dispositivo": "c41b096d-125f-40de-a634-a5ae58d7cf9b",
+    "timestamp": "2018-06-13T17:14:53.059Z"
+  },
+  {
+    "_key": "2793714",
+    "_id": "Dispositivos/2793714",
+    "_rev": "_W9mit1G--_",
+    "azure_id": "6a25159c-d668-4ed6-af52-20abfa3bab8a",
+    "name": "Timóteo",
+    "coordinate": [
+      -19.5845,
+      -42.6444
+    ],
+    "uuid_dispositivo": "8688b166-b817-4b15-a676-b3a6e02c4ea6",
+    "timestamp": "2018-06-13T17:15:02.294Z"
+  },
+  {
+    "_key": "2793748",
+    "_id": "Dispositivos/2793748",
+    "_rev": "_W9mi3_y--_",
+    "azure_id": "ea80c068-8cea-4ad3-80ab-7a7ef1cabb1e",
+    "name": "Ipatinga",
+    "coordinate": [
+      -19.469,
+      -42.5367
+    ],
+    "uuid_dispositivo": "6b67cd8b-fdff-471c-ac43-68791b229a73",
+    "timestamp": "2018-06-13T17:15:11.706Z"
+  },
+  {
+    "_key": "2793818",
+    "_id": "Dispositivos/2793818",
+    "_rev": "_W9mjI62--_",
+    "azure_id": "14f17c55-cdc8-412e-8b35-9f2ba0781fe8",
+    "name": "Viçosa",
+    "coordinate": [
+      -20.7546,
+      -42.8825
+    ],
+    "uuid_dispositivo": "ae7db9fe-6161-4338-a93a-e34c3c848c3e",
+    "timestamp": "2018-06-13T17:15:30.028Z"
+  },
+  {
+    "_key": "2793664",
+    "_id": "Dispositivos/2793664",
+    "_rev": "_X_3pxs---_",
+    "azure_id": "18f9cda4-b62c-4981-b011-7d2cd2768b5f",
+    "name": "João Monlevade",
+    "coordinate": [
+      -19.8093,
+      -43.1739
+    ],
+    "uuid_dispositivo": "eb1c568a-6e94-45d5-841f-42234e11cf50",
+    "timestamp": "2018-06-13T17:14:48.794Z"
+  },
+  {
+    "_key": "2793735",
+    "_id": "Dispositivos/2793735",
+    "_rev": "_W9miyyC--_",
+    "azure_id": "15423d2e-ef27-47d5-8c20-5ee154a27103",
+    "name": "Coronel Fabriciano",
+    "coordinate": [
+      -19.5202,
+      -42.6288
+    ],
+    "uuid_dispositivo": "7ae80f74-0fb1-4b1c-82b7-5fb355fa0ce4",
+    "timestamp": "2018-06-13T17:15:07.302Z"
+  },
+  {
+    "_key": "2793771",
+    "_id": "Dispositivos/2793771",
+    "_rev": "_W9mi7R2--_",
+    "azure_id": "d217c15c-1a87-42a5-97a1-fb6425863265",
+    "name": "Itabirito",
+    "coordinate": [
+      -20.2534,
+      -43.8091
+    ],
+    "uuid_dispositivo": "15d89945-5807-4bc9-9a39-c3d970ed266d",
+    "timestamp": "2018-06-13T17:15:16.065Z"
+  },
+  {
+    "_key": "2793841",
+    "_id": "Dispositivos/2793841",
+    "_rev": "_W9mjM8C--_",
+    "azure_id": "c8066c8b-b142-4d29-a6c8-e38cde957b17",
+    "name": "Rio Casca",
+    "coordinate": [
+      -20.2116,
+      -42.6591
+    ],
+    "uuid_dispositivo": "12c36ceb-a771-4120-8983-3971247b3531",
+    "timestamp": "2018-06-13T17:15:34.131Z"
+  },
+  {
+    "_key": "2793699",
+    "_id": "Dispositivos/2793699",
+    "_rev": "_X_3q_Nm--_",
+    "azure_id": "2d684f09-a5d6-41a6-897d-2d37105daefa",
+    "name": "Antônio Dias",
+    "coordinate": [
+      -19.6243,
+      -42.8685
+    ],
+    "uuid_dispositivo": "716ea40f-5a81-467f-bd57-23786568718b",
+    "timestamp": "2018-06-13T17:14:57.450Z"
+  },
+  {
+    "_key": "2793630",
+    "_id": "Dispositivos/2793630",
+    "_rev": "_X_3prdS--_",
+    "azure_id": "9f5fdb07-92a1-44d7-a085-2f61ae2acb3d",
+    "name": "Roças Novas (Caeté)",
+    "coordinate": [
+      -19.7639,
+      -43.6333
+    ],
+    "uuid_dispositivo": "dd0c251b-59a5-43f7-bd2b-68e4c93e6f82",
+    "timestamp": "2018-06-13T17:14:40.087Z"
+  }
+]

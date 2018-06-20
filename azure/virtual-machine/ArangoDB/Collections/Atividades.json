@@ -1,0 +1,52 @@
+[
+  {
+    "_key": "3365963",
+    "_id": "Atividades/3365963",
+    "_rev": "_X_NC0lS--_",
+    "azure_id": "d2aa3236-b844-4eca-8f02-2aaba127fdcc",
+    "uuid_dispositivo": "5a3b803f-2e9e-490d-a3cb-80024ef5cf97",
+    "uuid_atividade": "a182fedf-653d-4272-a767-6e15970d6c92",
+    "placa": "6MBV006",
+    "timestamp": "2018-06-18T16:40:24.384Z"
+  },
+  {
+    "_key": "3366005",
+    "_id": "Atividades/3366005",
+    "_rev": "_X_4FEFa--_",
+    "azure_id": "f2f66efe-ee48-444a-a973-8c3c5a0cc4b9",
+    "uuid_dispositivo": "c41b096d-125f-40de-a634-a5ae58d7cf9b",
+    "uuid_atividade": "a75b4886-b5b1-413d-bf1e-f367d1ceb750",
+    "placa": "6MBV006",
+    "timestamp": "2018-06-18T18:53:48.076Z"
+  },
+  {
+    "_key": "3366049",
+    "_id": "Atividades/3366049",
+    "_rev": "_X_4_jDG--_",
+    "azure_id": "69a36299-9f04-4f64-84dd-ebebb5ba4c00",
+    "uuid_dispositivo": "716ea40f-5a81-467f-bd57-23786568718b",
+    "uuid_atividade": "407cf410-3916-4577-9e27-25bdcf4899ca",
+    "placa": "6MBV006",
+    "timestamp": "2018-06-18T19:11:16.767Z"
+  },
+  {
+    "_key": "3365971",
+    "_id": "Atividades/3365971",
+    "_rev": "_X_4D9pe--_",
+    "azure_id": "0c469e22-0654-46e7-b114-b4a7fa27f0dd",
+    "uuid_dispositivo": "dd0c251b-59a5-43f7-bd2b-68e4c93e6f82",
+    "uuid_atividade": "6b0ceaad-f833-4254-a976-ac54417f9f3c",
+    "placa": "6MBV006",
+    "timestamp": "2018-06-18T17:23:32.954Z"
+  },
+  {
+    "_key": "3365988",
+    "_id": "Atividades/3365988",
+    "_rev": "_X_4_R6W--_",
+    "azure_id": "6c880d79-dbb7-4966-a7b4-e6c9109eda94",
+    "uuid_dispositivo": "eb1c568a-6e94-45d5-841f-42234e11cf50",
+    "uuid_atividade": "9ef61d6d-2740-4e57-8d1b-62e060078501",
+    "placa": "6MBV006",
+    "timestamp": "2018-06-18T18:30:41.976Z"
+  }
+]

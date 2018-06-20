@@ -1,0 +1,116 @@
+[
+    {
+      "uuid_dispositivo": "5a3b803f-2e9e-490d-a3cb-80024ef5cf97",
+      "name": "Belo Horizonte",
+      "timestamp": "2018-06-13T17:14:34.071Z",
+      "atividades": [
+        {
+          "uuid_atividade": "a182fedf-653d-4272-a767-6e15970d6c92",
+          "placa": "6MBV006",
+          "timestamp": "2018-06-18T16:40:24.384Z"
+        }
+      ]
+    },
+    {
+      "uuid_dispositivo": "dd0c251b-59a5-43f7-bd2b-68e4c93e6f82",
+      "name": "Roças Novas (Caeté)",
+      "timestamp": "2018-06-13T17:14:40.087Z",
+      "atividades": [
+        {
+          "uuid_atividade": "6b0ceaad-f833-4254-a976-ac54417f9f3c",
+          "placa": "6MBV006",
+          "timestamp": "2018-06-18T17:23:32.954Z"
+        }
+      ]
+    },
+    {
+      "uuid_dispositivo": "9a780f1f-182a-47ef-91fc-3fc3de5284fc",
+      "name": "Itabira",
+      "timestamp": "2018-06-13T17:14:44.478Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "eb1c568a-6e94-45d5-841f-42234e11cf50",
+      "name": "João Monlevade",
+      "timestamp": "2018-06-13T17:14:48.794Z",
+      "atividades": [
+        {
+          "uuid_atividade": "9ef61d6d-2740-4e57-8d1b-62e060078501",
+          "placa": "6MBV006",
+          "timestamp": "2018-06-18T18:30:41.976Z"
+        }
+      ]
+    },
+    {
+      "uuid_dispositivo": "c41b096d-125f-40de-a634-a5ae58d7cf9b",
+      "name": "Nova Era",
+      "timestamp": "2018-06-13T17:14:53.059Z",
+      "atividades": [
+        {
+          "uuid_atividade": "a75b4886-b5b1-413d-bf1e-f367d1ceb750",
+          "placa": "6MBV006",
+          "timestamp": "2018-06-18T18:53:48.076Z"
+        }
+      ]
+    },
+    {
+      "uuid_dispositivo": "716ea40f-5a81-467f-bd57-23786568718b",
+      "name": "Antônio Dias",
+      "timestamp": "2018-06-13T17:14:57.450Z",
+      "atividades": [
+        {
+          "uuid_atividade": "407cf410-3916-4577-9e27-25bdcf4899ca",
+          "placa": "6MBV006",
+          "timestamp": "2018-06-18T19:11:16.767Z"
+        }
+      ]
+    },
+    {
+      "uuid_dispositivo": "8688b166-b817-4b15-a676-b3a6e02c4ea6",
+      "name": "Timóteo",
+      "timestamp": "2018-06-13T17:15:02.294Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "7ae80f74-0fb1-4b1c-82b7-5fb355fa0ce4",
+      "name": "Coronel Fabriciano",
+      "timestamp": "2018-06-13T17:15:07.302Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "6b67cd8b-fdff-471c-ac43-68791b229a73",
+      "name": "Ipatinga",
+      "timestamp": "2018-06-13T17:15:11.706Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "15d89945-5807-4bc9-9a39-c3d970ed266d",
+      "name": "Itabirito",
+      "timestamp": "2018-06-13T17:15:16.065Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "3e8f7428-7022-4aa0-8422-99cabc5eaa2b",
+      "name": "Ouro Preto",
+      "timestamp": "2018-06-13T17:15:20.503Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "abcedc61-4197-4d84-91cf-f981bda7b250",
+      "name": "Ponte Nova",
+      "timestamp": "2018-06-13T17:15:24.398Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "ae7db9fe-6161-4338-a93a-e34c3c848c3e",
+      "name": "Viçosa",
+      "timestamp": "2018-06-13T17:15:30.028Z",
+      "atividades": []
+    },
+    {
+      "uuid_dispositivo": "12c36ceb-a771-4120-8983-3971247b3531",
+      "name": "Rio Casca",
+      "timestamp": "2018-06-13T17:15:34.131Z",
+      "atividades": []
+    }
+  ]

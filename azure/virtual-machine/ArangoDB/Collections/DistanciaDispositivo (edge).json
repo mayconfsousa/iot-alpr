@@ -1,0 +1,146 @@
+[
+  {
+    "_key": "2817305",
+    "_id": "DistanciaDispositivo/2817305",
+    "_from": "Dispositivos/2793805",
+    "_to": "Dispositivos/2793841",
+    "_rev": "_W9qcpfq--d",
+    "distance": 37.9,
+    "speed": 60
+  },
+  {
+    "_key": "2817285",
+    "_id": "DistanciaDispositivo/2817285",
+    "_from": "Dispositivos/2793783",
+    "_to": "Dispositivos/2793805",
+    "_rev": "_W9rVTva--_",
+    "distance": 79,
+    "speed": 60
+  },
+  {
+    "_key": "2817281",
+    "_id": "DistanciaDispositivo/2817281",
+    "_from": "Dispositivos/2793805",
+    "_to": "Dispositivos/2793818",
+    "_rev": "_W9qcpfq--F",
+    "distance": 50.1,
+    "speed": 60
+  },
+  {
+    "_key": "2817293",
+    "_id": "DistanciaDispositivo/2817293",
+    "_from": "Dispositivos/2793841",
+    "_to": "Dispositivos/2793664",
+    "_rev": "_W9qcpfq--R",
+    "distance": 89.8,
+    "speed": 60
+  },
+  {
+    "_key": "2817299",
+    "_id": "DistanciaDispositivo/2817299",
+    "_from": "Dispositivos/2793630",
+    "_to": "Dispositivos/2793654",
+    "_rev": "_W9rVInu--_",
+    "distance": 58,
+    "speed": 60
+  },
+  {
+    "_key": "2817277",
+    "_id": "DistanciaDispositivo/2817277",
+    "_from": "Dispositivos/2793699",
+    "_to": "Dispositivos/2793748",
+    "_rev": "_W9qcpfq--B",
+    "distance": 49.7,
+    "speed": 90
+  },
+  {
+    "_key": "2817303",
+    "_id": "DistanciaDispositivo/2817303",
+    "_from": "Dispositivos/2793688",
+    "_to": "Dispositivos/2793699",
+    "_rev": "_X_3oZqO--_",
+    "distance": 26.8,
+    "speed": 70
+  },
+  {
+    "_key": "2817295",
+    "_id": "DistanciaDispositivo/2817295",
+    "_from": "Dispositivos/2793654",
+    "_to": "Dispositivos/2793688",
+    "_rev": "_W9qcpfq--T",
+    "distance": 32.7,
+    "speed": 60
+  },
+  {
+    "_key": "2817283",
+    "_id": "DistanciaDispositivo/2817283",
+    "_from": "Dispositivos/2793771",
+    "_to": "Dispositivos/2793783",
+    "_rev": "_W9qcpfq--H",
+    "distance": 42.2,
+    "speed": 70
+  },
+  {
+    "_key": "2817273",
+    "_id": "DistanciaDispositivo/2817273",
+    "_from": "Dispositivos/2793664",
+    "_to": "Dispositivos/2793688",
+    "_rev": "_X_3opXG--_",
+    "distance": 27.5,
+    "speed": 70
+  },
+  {
+    "_key": "2817301",
+    "_id": "DistanciaDispositivo/2817301",
+    "_from": "Dispositivos/2793699",
+    "_to": "Dispositivos/2793714",
+    "_rev": "_W9qcpfq--Z",
+    "distance": 41.1,
+    "speed": 80
+  },
+  {
+    "_key": "2817287",
+    "_id": "DistanciaDispositivo/2817287",
+    "_from": "Dispositivos/2793735",
+    "_to": "Dispositivos/2793748",
+    "_rev": "_W9qcpfq--L",
+    "distance": 15.3,
+    "speed": 60
+  },
+  {
+    "_key": "2817297",
+    "_id": "DistanciaDispositivo/2817297",
+    "_from": "Dispositivos/2793616",
+    "_to": "Dispositivos/2793630",
+    "_rev": "_X_3oG26--_",
+    "distance": 48.8,
+    "speed": 60
+  },
+  {
+    "_key": "2817279",
+    "_id": "DistanciaDispositivo/2817279",
+    "_from": "Dispositivos/2793630",
+    "_to": "Dispositivos/2793664",
+    "_rev": "_X_3o6Gu--_",
+    "distance": 69.4,
+    "speed": 60
+  },
+  {
+    "_key": "2817291",
+    "_id": "DistanciaDispositivo/2817291",
+    "_from": "Dispositivos/2793714",
+    "_to": "Dispositivos/2793735",
+    "_rev": "_W9qcpfq--P",
+    "distance": 9.9,
+    "speed": 60
+  },
+  {
+    "_key": "2817289",
+    "_id": "DistanciaDispositivo/2817289",
+    "_from": "Dispositivos/2793616",
+    "_to": "Dispositivos/2793771",
+    "_rev": "_W9qcpfq--N",
+    "distance": 60.8,
+    "speed": 80
+  }
+]

@@ -1,0 +1,10 @@
+{
+    "name": "functions-dependencies",
+    "description": "...",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "arangojs": "^6.0.0",
+        "uuid": "^3.2.1"
+    }
+}
